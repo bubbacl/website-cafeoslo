@@ -1,0 +1,145 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+
+/* ---------- END RESET ---------- */
+
+* {box-sizing: border-box;}
+img {max-width: 100%;}
+a {text-decoration: none;}
+strong {font-weight: 800;}
+
+/* ---------- STAR CSS ---------- */
+
+body {background: #f5f0ed; font-family: 'Open Sans', sans-serif;}
+h1, h2, h3 {font-weight: 800; line-height: 1.2em;}
+h1 {font-size: 44px; color: #f5f0ed;}
+h2 {font-size: 28px; color: #ded6c0;}
+h3 {font-size: 24px; color: #3c3c3b;}
+p {font-size: 16px; font-weight: 400; line-height: 1.5em;}
+
+.main {width: 100%; height: 600px; background: url(../images/Fondo1.jpg) no-repeat center; background-size: cover; text-align: center;}
+header {width: 100%; height: 80px;}
+.logo {float: left; margin: 1em;}
+.line {width: 100px; margin: 30px auto; border-bottom: 3px solid white;}
+.main h1 {margin: 1em auto 0 auto; width: 90%;}
+.main p{color: #f5f0ed; width: 80%; margin: 0 auto;}
+
+.sub_main_1, .sub_main_2 {width: 100%; overflow: hidden; text-align: center; padding: 60px 30px;}
+.sub_main_1 {background: #d03b40;}
+.sub_main_2 {background: #ded6c0;}
+.sub_main_1 p{color: #ded6c0; margin: 30px 0 0 0;}
+.sub_main_2 p{color: #d03b40; margin: 30px 0 0 0;}
+.sub_main_2 h2{color: #d03b40;}
+
+.main_2 {width: 100%; height: 500px; background: url(../images/Fondo2.jpg) no-repeat center left; background-size: cover; text-align: center; padding: 90px 30px;}
+.main_2 p{color: #ded6c0; margin: 30px 0;}
+.box {display: block; color: #ded6c0; border: 2px solid #ded6c0; padding: 15px;}
+
+.categories {width: 100%; padding: 30px;}
+.categories img{width: 25%; max-width: 100px; display: block; margin: 0 auto 15px auto;}
+
+footer {width: 100%;overflow: hidden;background: #241d1b; color: #f5f0ed; padding: 40px 30px;float: left;}
+footer p{display: block;}
+span {display: none;}
+
+/* ---------- MENU X  ---------- */
+
+.revertir {position: absolute;width: 3rem;height: 2.2rem;top: .5rem;left: .5rem;z-index: 1;}
+.toggle {display: block;position: absolute;top: 2.5rem; left: 1.2rem;height: .2rem;width: 2rem;background: #ded6c0; border-radius: 3px;transition: .3s linear;z-index: 2;}
+.toggle:hover {background: #241d1b;}
+.toggle::before, .toggle::after {content: '';background: inherit;width: 100%;height: 100%;position: absolute;left: 0;top: -.7rem;transform: rotate(0deg);border-radius: 3px;transition: transform .3s linear, top .3s .2s;}
+.toggle::after {top: .7rem;}
+#diana:target ~ .toggle {background: rgba(0,0,0,0);z-index: 1;}
+#diana:target ~ .toggle::before {top: 0;background: #ded6c0;transform: rotatez(45deg);transform-origin: center center 0;}
+#diana:target ~ .toggle::after {top: 0;  background: #ded6c0;transform: rotatez(-45deg);transform-origin: center center 0;}
+
+#diana:target ~ .toggle::before,
+#diana:target ~ .toggle::after{transition: background .5s, transform .3s linear .2s, top .3s;}
+
+#diana:target ~ .revertir {z-index: 2;}
+#diana:target ~ .revertir:hover + .toggle::after,
+#diana:target ~ .revertir:hover + .toggle::before {background: #241d1b;}
+
+/* ---------- MENU ---------- */
+
+.navegacion a{display: block; text-decoration: none; color: #ded6c0; border-bottom: 1px solid #2D211F;}
+.navegacion a:hover{color: #d03b40;  transition: 0.5s color;}
+
+.lanzador-menu{width: 40px; height: 40px; background-color: #d03b40; display: block; margin: 1.5em 1em; float: right;}
+.rectangle {width: 70%;height: 2px;background: #ded6c0;margin: 0.5em auto;border-radius: 40px;}
+
+#contacto {display: block;}
+
+/* ---------- MEDIA QUERY MAX WIDTH 600 (RESPONSIVE MENU) ---------- */
+@media screen and (max-width: 800px){
+    .js .navegacion{max-height: 0; overflow: hidden; transition: max-height .5s; position: absolute; top: 65px; left: 1em; right: 1em;background-color: #d03b40; text-align: center;}
+    .js .navegacion a{padding: 5px 10px; color: #f5f0ed;}
+    .js .navegacion a:hover{background: #f5f0ed;transition: 0.5s color; color: #d03b40;}
+    .js .navegacion.menu-desplegado{max-height: 200px;}
+}
+
+/* ---------- MEDIA QUERIS MIN WIDTH 600 ---------- */
+@media screen and (min-width: 601px){
+    .main p{display: block; width: 60%; margin: 0 auto;}
+    .sub_main_1, .sub_main_2 {width: 100%; height: 250px; padding-top: 4.5em;}
+    .main_2 {height: 430px;}
+    .main_2 p{display: block; width: 80%; margin: 2em auto;}
+    .box {width: 50%; margin: 0 auto;}
+    .categories {text-align: center;}
+}
+
+/* ---------- MEDIA QUERIS MIN WIDTH 800 ---------- */
+@media screen and (min-width: 801px){
+    .main h1{ margin-top: 10%;}
+    .main p{display: block; width: 60%; margin: 0 auto;}
+    .sub_main_1, .sub_main_2 {width: 50%; height: 400px; float: left; padding-top: 12%;}
+    .main_2 {float: left;}
+    .categories {width: 50%; float: left; height: 320px; padding-top: 4em; text-align: left;}
+    .categories img {float: left; width: 30%; max-width: 30%; margin-right: 2em;}
+    .lanzador-menu, .toogle{display: none;}
+    .navegacion {position: absolute; top: 1.5em; right: 1em;}
+    .navegacion li {float: left;}
+    .navegacion li a{color: #ded6c0; border: 0px; margin: 1em;}
+}
+
+/* ---------- MEDIA QUERIS MIN WIDTH 1000 ---------- */
+@media screen and (min-width: 1000px){
+    .main p{display: block; width: 40%; margin: 0 auto;}
+    .main_2 p{display: block; width: 60%; margin: 2em auto;}
+    .categories {height: 300px;}
+    .box {width: 45%; margin: 0 auto; border: 3px solid #ded6c0;}
+    footer {height: 150px; padding-top: 4em;}
+    footer p{ display: inline; float: left;}
+    span {display: inline;}
+    #ofertas, #productos, #contacto {width: 100%; overflow: hidden;}
+}
+
+
+
