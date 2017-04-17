@@ -5,4 +5,4 @@
 * #### Desarrollo propio. ####
 * #### Diseño responsivo. ####
 >
-> Proyecto personal.
+> Proyecto personal
